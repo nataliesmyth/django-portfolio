@@ -14,3 +14,6 @@ class CommentForm(forms.Form):
             "placeholder": "Leave a comment!"
         })
     )
+
+# In Django, forms are very similar to models.
+# A form consists of a class where the class attributes are form fields. 

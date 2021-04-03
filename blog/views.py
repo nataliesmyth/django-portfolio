@@ -1,6 +1,8 @@
 from django.shortcuts import render
 # import Post and Comment models
 from blog.models import Post, Comment
+# import forms
+from .forms import CommentForm
 
 # Create your views here.
 # inside the view function (blog_index()), we obtain a Queryset containing all the posts in the database.order_by() orders the Queryset according to the agument given, with the minus sign telling Django to start with the largest value so the posts will be ordered witht he most recent one first
@@ -34,10 +36,23 @@ def blog_category(request, category):
 def blog_detail(request, pk):
     # view function takes pk value as an argument and retrieves the object with the given pk
     post = Post.objects.get(pk=pk)
+
+    form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = Comment(
+                author=form.cleaned_data["author"],
+                body=form.cleaned_data["body"],
+                post=post
+            )
+            comment.save()
+
     comments = Comment.objects.filter(post=post)
     context = {
         "post": post,
         "comments": comments,
+        "form": form,
     }
 
     return render(request, "blog_detail.html", context)
