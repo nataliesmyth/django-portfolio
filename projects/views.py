@@ -35,3 +35,6 @@ def project_detail(request, pk):
         'project': project
     }
     return render(request, 'project_detail.html', context)
+
+# After functions are created, they must be hooked up to URLS
+# first step: create projects/urls.py to hold URL configuration for the app
