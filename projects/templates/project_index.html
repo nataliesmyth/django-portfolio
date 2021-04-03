@@ -1,4 +1,7 @@
+<!-- extend base.html template -->
 {% extends "base.html" %}
+<!-- add tag to include static files e.g. images -->
+<!-- NOTE: when we created our Project model, one of its attributes was a filepath. That filepath is where we will store the actual images for each project -->
 {% load static %}
 {% block page_content %}
 <h1>Projects</h1>
@@ -20,3 +23,5 @@
     {% endfor %}
 </div>
 {% endblock %}
+
+<!-- Django automatically registers static files stored in a directory named static/ in each app -->
