@@ -27,4 +27,11 @@ def project_index(request):
 # You MUST create a context dictionary and pass it to render in each view function you create
 
 # Create project_detail() view function, which needs an additional argument, the ID of the project being viewed
-def project_detail
+def project_detail(request, pk):
+    # Perform query that retrieves the project with primary key (pk) equal to that in the function argument
+    project = Project.objects.get(pk=pk)
+    # Then, we assign that project in our context dictionary, which we pass to render()
+    context = {
+        'project': project
+    }
+    return render(request, 'project_detail.html', context)
