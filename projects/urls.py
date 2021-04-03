@@ -12,3 +12,5 @@ urlpatterns = [
 # We want the URL to be /1, /2, and so on, depending on the project's pk
 # The pk value in the URL is the same pk passed to the view function, so we need to dynamically generate these URLS depending on which project the user wants to view.
 # To dynamically generate URLS, wen need <int:pk> notation! It simply tells Django that the value passed in the URL is an integer, and its variable name is pk.
+
+# NEXT STEP: hook these URLS up to the project URLS in personal_portfolio/urls.py
