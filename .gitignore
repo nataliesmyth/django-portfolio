@@ -114,3 +114,6 @@ blog/__pycache__
 venv/bin/__pycache__
 venv/include
 venv/lib
+projects/__pycache__
+projects/migrations/__pycache__
+blog/migrations/__pycache__
