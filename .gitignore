@@ -117,3 +117,4 @@ venv/lib
 projects/__pycache__
 projects/migrations/__pycache__
 blog/migrations/__pycache__
+hello_world/
