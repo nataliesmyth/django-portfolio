@@ -107,3 +107,10 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+personal_portfolio/settings.py
+personal_portfolio/__pycache__
+hello_world/__pycache__
+blog/__pycache__
+venv/bin/__pycache__
+venv/include
+venv/lib
